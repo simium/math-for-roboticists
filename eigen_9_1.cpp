@@ -42,10 +42,10 @@ int main(int argc, char *argv[])
     R_B_O << cos(theta), -sin(theta), sin(theta), cos(theta);
     R_S_B << cos(beta), -sin(beta), sin(beta), cos(beta);
 
-    cout << "R in B wrt O:" << endl;
+    cout << "R of B wrt O:" << endl;
     cout << R_B_O << endl << endl;
 
-    cout << "R in S wrt B:" << endl;
+    cout << "R of S wrt B:" << endl;
     cout << R_S_B << endl << endl;
 
     cout << "and the homogeneous matrixes representing the" << endl;
@@ -54,13 +54,15 @@ int main(int argc, char *argv[])
     Matrix3f T_B_O;
     Matrix3f T_S_B;
 
-    T_B_O << R_B_O(0,0), R_B_O(0,1), p_O[0], R_B_O(1,0), R_B_O(1,1), p_O[1], 0, 0, 1;
-    T_S_B << R_S_B(0,0), R_S_B(0,1), m_B[0], R_S_B(1,0), R_S_B(1,1), m_B[1], 0, 0, 1;
+    //Equivalent to T_B_O << R_B_O(0,0), R_B_O(0,1), p_O[0], R_B_O(1,0), R_B_O(1,1), p_O[1], 0, 0, 1;
+    T_B_O << R_B_O, p_O, 0, 0, 1;
+    //Equivalent to T_S_B << R_S_B(0,0), R_S_B(0,1), m_B[0], R_S_B(1,0), R_S_B(1,1), m_B[1], 0, 0, 1;
+    T_S_B << R_S_B, m_B, 0, 0, 1;
 
-    cout << "T in B wrt O:" << endl;
+    cout << "T of B wrt O:" << endl;
     cout << T_B_O << endl << endl;
 
-    cout << "T in S wrt B:" << endl;
+    cout << "T of S wrt B:" << endl;
     cout << T_S_B << endl << endl;
 
     cout << "So the point q with respect to the vehicle base frame" << endl;
