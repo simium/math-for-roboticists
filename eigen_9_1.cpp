@@ -28,10 +28,12 @@ int main(int argc, char *argv[])
     Vector2f q_S(12.0, 3.0);
 
     cout << "The points involved are:" << endl;
-    cout << "p wrt O:" << endl;
+    cout << "Coordinates of p wrt O:" << endl;
     cout << p_O << endl << endl;
-    cout << "m wrt B:" << endl;
+    cout << "Coordinates of m wrt B:" << endl;
     cout << m_B << endl << endl;
+    cout << "Coordinates of q wrt S:" << endl;
+    cout << q_S << endl << endl;
 
     cout << "The rotation matrixes involved are:" << endl;
     Matrix2f R_B_O;
@@ -40,10 +42,10 @@ int main(int argc, char *argv[])
     R_B_O << cos(theta), -sin(theta), sin(theta), cos(theta);
     R_S_B << cos(beta), -sin(beta), sin(beta), cos(beta);
 
-    cout << "R_B wrt O:" << endl;
+    cout << "R in B wrt O:" << endl;
     cout << R_B_O << endl << endl;
 
-    cout << "R_S wrt B:" << endl;
+    cout << "R in S wrt B:" << endl;
     cout << R_S_B << endl << endl;
 
     cout << "and the homogeneous matrixes representing the" << endl;
