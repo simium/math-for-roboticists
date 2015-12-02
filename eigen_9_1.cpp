@@ -9,6 +9,8 @@
 #include <eigen3/Eigen/Dense>
 #include <eigen3/Eigen/Geometry>
 
+#define PI 3.14159265
+
 // import most common Eigen types
 using namespace std;
 using namespace Eigen;
@@ -22,8 +24,8 @@ int main(int argc, char *argv[])
     Vector2f p_O(10.8, -2.7);
     Vector2f m_B(3.1, 1.2);
 
-    double theta = 28.0;
-    double beta = 41.0;
+    double theta = 28.0*PI/180.0;
+    double beta = 41.0*PI/180.0;
 
     Vector2f q_S(12.0, 3.0);
 
